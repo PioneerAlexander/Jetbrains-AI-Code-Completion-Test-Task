@@ -3,10 +3,11 @@ This script splits the python files into three parts simulating the cursor posit
 """
 import os
 import random
+from typing import List, Dict
 
-from src.code_preprocess_utils import remove_comments_and_annotations
+from code_preprocess_utils import remove_comments_and_annotations
 
-def split_python_files(directory, num_splits=3) -> list[dict]:
+def split_python_files(directory, context_length, num_splits=4) -> List[Dict]:
     """
     Splits python files in the given directory into three parts simulating the user cursor position.
     
@@ -25,22 +26,29 @@ def split_python_files(directory, num_splits=3) -> list[dict]:
             content = remove_comments_and_annotations(content)
             lines = content.split('\n')
 
-            if len(lines) > 110:
-                continue
+            if len(lines) > context_length:
+                split_points = []
+                for _ in range(num_splits):
+                    # For the large enough files, we trim the prefix and suffix, such that they can be fed to a model 
+                    split_point = random.randint(0, len(lines) - context_length)
+                    if split_point not in split_points:
+                        middle_length = 2
+                        
+                        prefix_length = context_length // 2
+                        middle = '\n'.join(lines[split_point + prefix_length:split_point + prefix_length + middle_length])
+                        prefix = '\n'.join(lines[split_point:split_point + prefix_length])
+                        suffix = '\n'.join(lines[split_point+prefix_length+middle_length:split_point+context_length])
 
-            for _ in range(num_splits):
-                # select a split point in the middle of the file to ensure split is reasonable
-                split_point = random.randint(len(lines) // 3, len(lines) * 2 // 3)
+                        split_files.append({"prefix": prefix, "middle": middle, "suffix": suffix})
+                        split_points.append(split_point) # ensure no occasional duplications
+            else:
+                split_point = len(lines) // 2
 
-                # ensure the middle part is one or two lines
-                if split_point < len(lines) - 1:
-                    middle = '\n'.join(lines[split_point:split_point + 2])
-                    prefix = '\n'.join(lines[:split_point])
-                    suffix = '\n'.join(lines[split_point + 2:])
-                else:
-                    middle = lines[split_point - 1]
-                    prefix = '\n'.join(lines[:split_point - 1])
-                    suffix = ''
+                middle_length = 2
+                        
+                middle = '\n'.join(lines[split_point:split_point + middle_length])
+                prefix = '\n'.join(lines[:split_point])
+                suffix = '\n'.join(lines[split_point + middle_length:])
 
                 split_files.append({"prefix": prefix, "middle": middle, "suffix": suffix})
 
