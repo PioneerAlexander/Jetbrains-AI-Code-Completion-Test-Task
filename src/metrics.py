@@ -1,7 +1,7 @@
 """
     This module contains the metrics functions, which will be used for
     analysing the performance of a code completion model. These metrics are
-    BLEU score, Exact Match, and Edit Similarity.
+    CHRF, Exact Match, BLEU score and Edit Similarity.
 """
 from nltk.translate.bleu_score import sentence_bleu
 import evaluate

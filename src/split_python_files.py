@@ -4,7 +4,7 @@ This script splits the python files into three parts simulating the cursor posit
 import os
 import random
 
-from code_preprocess_utils import remove_comments_and_annotations
+from src.code_preprocess_utils import remove_comments_and_annotations
 
 def split_python_files(directory, num_splits=3) -> list[dict]:
     """
