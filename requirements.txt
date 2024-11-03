@@ -1,0 +1,5 @@
+transformers==4.46.1
+nltk
+evaluate
+Levenshtein
+sacrebleu

@@ -1,0 +1,434 @@
+[
+    {
+        "model_completion": " # 20\n    assert from_signature_body_pairs_to_dataframe(\n        [sig_body_pair1, sig_body_pair2]).equals(discard_functions_with",
+        "expected_completion": "    assert from_signature_body_pairs_to_dataframe(\n        [sig_body_pair1]).equals(discard_functions_with_long_bodies(5, df))",
+        "score": 4,
+        "bleu_score": 7.57965434483665e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.671875,
+        "chrf_score": 83.18842275916776
+    },
+    {
+        "model_completion": "# 100000000000000000000000000000000000000000000000000000000000000000",
+        "expected_completion": "    sig_body_pair3 = SignatureBodyOutput(\"abc\", \"cdrjdgjlkjlgjklajfrjrklgjkgjelkrgjelrg\")\n    sig_body_pair2 = SignatureBodyOutput(\"abc\", \"kglglggfkllkgk\")",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.006451612903225823,
+        "chrf_score": 0.0
+    },
+    {
+        "model_completion": "[sig_body_pair1, sig_body_pair2, sig_body_pair3]).equals(df)\n    assert from_signature_body_pairs_to_dataframe(  [sig_body_pair1, sig_",
+        "expected_completion": "        [sig_body_pair1, sig_body_pair2]).equals(discard_functions_with_long_bodies(20, df))\n    assert from_signature_body_pairs_to_dataframe(",
+        "score": 3,
+        "bleu_score": 7.711523862191631e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.4825174825174825,
+        "chrf_score": 68.73926322407792
+    },
+    {
+        "model_completion": "# noqa: D103\n    assert replace_indentation_and_eol_symbols(\n        \"def transform(original: Any):<EOL><INDENT>return if",
+        "expected_completion": "    body1 = \n    answer1 = (\"{<EOL><INDENT>val original = super.visitMethod(access, name, desc, signature, exceptions)<EOL>\"",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.12903225806451613,
+        "chrf_score": 27.455787386460774
+    },
+    {
+        "model_completion": "# type: ignore\n\n    return data\n\n\nif __name__ == \"__main",
+        "expected_completion": "    df = pd.DataFrame(data)\n    df.to_json(filename)",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.1607142857142857,
+        "chrf_score": 14.029684122752158
+    },
+    {
+        "model_completion": "# TODO: remove this\n        pad_token=SpecialTokens.PAD_TOKEN,\n        bos_token=SpecialTokens.BOS_TOKEN",
+        "expected_completion": "    )\n    train_dataset, test_dataset = random_split(dataset, lengths=(len(dataset) - 20000, 20000))",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.10576923076923073,
+        "chrf_score": 8.36523199847495
+    },
+    {
+        "model_completion": "as sp\n\n\ndef get_dataset(df, tokenizer, max_seq_len,",
+        "expected_completion": "def save_subset_into_json(subset, filename: str):\n    data = [{",
+        "score": 1,
+        "bleu_score": 9.853445011990208e-232,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.2222222222222222,
+        "chrf_score": 18.094109066186334
+    },
+    {
+        "model_completion": " # save to json\n\n\ndef load_dataset(\n       ",
+        "expected_completion": "def main(\n        dataset_load_path: str,",
+        "score": 1,
+        "bleu_score": 1.1640469867513693e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.2093023255813954,
+        "chrf_score": 31.63344269743203
+    },
+    {
+        "model_completion": "# 1000\n    print(f\"Min length: {dataset.corpus",
+        "expected_completion": "def test_kotlin_dataset_creation():\n    json_filenames = [",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.10344827586206895,
+        "chrf_score": 16.889366336797156
+    },
+    {
+        "model_completion": "# 1000\n    print(f\"Max length: {dataset.corpus['body'].apply(len).max()}\")\ndef test_python_dataset",
+        "expected_completion": "    print(f\"First element signature: {dataset[0]['signature']}\")\n    print(f\"First element body: {dataset[0]['body']}\")",
+        "score": 1,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.2773109243697479,
+        "chrf_score": 29.227509564243782
+    },
+    {
+        "model_completion": "]\n\n    for json_filename in json_filenames:\n        print(\"",
+        "expected_completion": "    ]\n    for json_filename in json_filenames[1:]:",
+        "score": 4,
+        "bleu_score": 0.5081327481546147,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.6271186440677966,
+        "chrf_score": 84.88466330796747
+    },
+    {
+        "model_completion": "\n            json_filename,\n            max_samples=10000,\n            max_tokens=",
+        "expected_completion": "            json_with_functions_filename=json_filename,\n            max_len=MAX_LEN,",
+        "score": 4,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.41666666666666663,
+        "chrf_score": 34.406542341517465
+    },
+    {
+        "model_completion": " # type: ignore\n    tokenizer = AutoTokenizer.from_pretrained(\n        model_name,\n        torch_dtype=\"auto",
+        "expected_completion": "    tokenizer = AutoTokenizer.from_pretrained(model_name)\n    torch.save(model, model_save_name)",
+        "score": 3,
+        "bleu_score": 6.484592771860512e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.4814814814814815,
+        "chrf_score": 63.89921450018857
+    },
+    {
+        "model_completion": "# noqa: E501\n    \"\"\"\n    Load a model from a checkpoint.\n\n    :param model_name: The name of the model to load.\n    :",
+        "expected_completion": "    device = \"cuda\" if torch.cuda.is_available() else \"cpu\"\n    model = AutoModelForCausalLM.from_pretrained(",
+        "score": 0,
+        "bleu_score": 8.614911585158347e-232,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.14529914529914534,
+        "chrf_score": 15.691731573980519
+    },
+    {
+        "model_completion": "\n    print(tokenizer.decode(tokenizer.encode(\"Hello, my dog is cute\")))\n    print(tokenizer.decode(tokenizer.",
+        "expected_completion": "    torch.save(model, model_save_name)\n    tokenizer.save_pretrained(tokenizer_save_path_name)",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.2660550458715596,
+        "chrf_score": 27.54463327736402
+    },
+    {
+        "model_completion": "# Use GPU if available\n    model = AutoModelForSequenceClassification.from_pretrained(model_",
+        "expected_completion": "    model = AutoModelForCausalLM.from_pretrained(\n        model_name,",
+        "score": 4,
+        "bleu_score": 6.484592771860512e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.40217391304347827,
+        "chrf_score": 65.6725263213647
+    },
+    {
+        "model_completion": " # remove Bob:\n   <EOT></s>",
+        "expected_completion": "    if \"Alice\" in generated_body:\n        generated_body = generated_body.split(sep=\"Alice\")[0]",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.11578947368421055,
+        "chrf_score": 2.0325203252032518
+    },
+    {
+        "model_completion": "\n                \"input_ids\": torch.stack(input_ids),\n                \"attention_mask\": torch.stack(attention_mask),",
+        "expected_completion": "            \"input_ids\": torch.stack(input_ids),\n            \"attention_mask\": torch.stack(attention_mask),",
+        "score": 5,
+        "bleu_score": 1.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.9224137931034483,
+        "chrf_score": 100.0
+    },
+    {
+        "model_completion": "as TorchDataset\n\n\nclass Dataset(TorchDataset):\n    class Token(StrEnum):\n        PAD",
+        "expected_completion": "from src.dataset.KotlinCodeCompletionDataset import KotlinCodeCompletionDataset\nclass SpecialTokens(StrEnum):",
+        "score": 4,
+        "bleu_score": 1.1200407237786664e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.27522935779816515,
+        "chrf_score": 31.3420532970269
+    },
+    {
+        "model_completion": "zip(input_ids, labels)]\n\n\ndef get_dataset(tokenizer, signature, prompt_function, device):\n    \"\"\"\n    Args:\n        tokenizer: tokenizer",
+        "expected_completion": "            zip(batch_input_ids, encoded[\"labels\"])]\ndef preprocess_batch_for_eval(signatures: List[str], tokenizer, device, prompt_function):",
+        "score": 4,
+        "bleu_score": 1.0003688322288243e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.19718309859154926,
+        "chrf_score": 45.14580685118844
+    },
+    {
+        "model_completion": " # Use GPU if available\n    if wandb_project is not None:\n        if wandb.run is None:\n   <EOT></s>",
+        "expected_completion": "    assert (not use_wandb) or (use_wandb and wandb_project is not None)\n    if use_wandb:",
+        "score": 3,
+        "bleu_score": 2.841632707086713e-78,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.32999999999999996,
+        "chrf_score": 37.25411450065037
+    },
+    {
+        "model_completion": "+ signature\n    return instruction\n\n\ndef get_dataset_load_mode(dataset_name):\n    if dataset_name == \"kotlin\":\n        return \"kotlin\"\n   ",
+        "expected_completion": "    instruct_prompt_fn = partial(instruct_prompt, instruction=instruction)\n    with tqdm(enumerate(dataloader)) as progressbar:",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.19565217391304346,
+        "chrf_score": 23.138123090892563
+    },
+    {
+        "model_completion": "\n    preprocess_batch_for_train, preprocess_batch_for_test\nfrom src.model.model import CodeXGLUEModel\nfrom src.model.config import CodeXGLUEConfig\n",
+        "expected_completion": "    instruct_prompt, get_body_from_instruct_answer, collate_fn_eval\nfrom src.model.metrics import bleu_score, exact_match, edit_similarity",
+        "score": 0,
+        "bleu_score": 1.2183324802375697e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.27210884353741494,
+        "chrf_score": 26.871141924469434
+    },
+    {
+        "model_completion": "dedent_token=SpecialTokens.DEDENT_TOKEN)\n                              for signature in signatures]\n            if finetuned:\n               ",
+        "expected_completion": "                                                   dedent_token=SpecialTokens.DEDENT_TOKEN) for signature in signatures]\n            bodies = batch[\"body\"]",
+        "score": 4,
+        "bleu_score": 0.5329462628216854,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.3096774193548387,
+        "chrf_score": 78.04514696258522
+    },
+    {
+        "model_completion": "indentation_token=self.indentation_token,\n                end_of_line_token=self.end_",
+        "expected_completion": "                indent_token=self.indent_token,\n                dedent_token=self.dedent_token,",
+        "score": 3,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.5368421052631579,
+        "chrf_score": 57.79228025164361
+    },
+    {
+        "model_completion": "# build corpus\n        self.df = self.build_df()  # build dataframe\n\n    def build_corpus(self):\n        \"\"\"\n",
+        "expected_completion": "    def build_corpus(self):\n        df = read_dataframe_from_json(filename=self.json_with_functions_filename)",
+        "score": 2,
+        "bleu_score": 5.791739854583281e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.1834862385321101,
+        "chrf_score": 39.08552819614822
+    },
+    {
+        "model_completion": "# end of line token\n        self.end_of_text_token = eot_token  # end of",
+        "expected_completion": "        self.is_subset = is_subset\n        self.corpus = self.build_corpus()",
+        "score": 0,
+        "bleu_score": 1.0003688322288243e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.1842105263157895,
+        "chrf_score": 10.50712529416167
+    },
+    {
+        "model_completion": " # remove None\n            df = df[df[\"body\"] != \"None\"]  # remove None\n            df = df[df[\"body\"] != \"\"] ",
+        "expected_completion": "            df = discard_functions_with_long_bodies(max_len=self.max_len, df=df)\n        return df",
+        "score": 0,
+        "bleu_score": 4.987693055201041e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.21818181818181814,
+        "chrf_score": 12.857359912001016
+    },
+    {
+        "model_completion": "[reference], pred, weights=[1, 0, 0",
+        "expected_completion": "        [reference.split()],\n        pred.split()",
+        "score": 2,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.24489795918367352,
+        "chrf_score": 38.55980477598334
+    },
+    {
+        "model_completion": "\n    return sentence_bleu(\n        [reference.split()],",
+        "expected_completion": "    return sentence_bleu(\n        [reference.split()],",
+        "score": 5,
+        "bleu_score": 1.2213386697554703e-77,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.9818181818181818,
+        "chrf_score": 100.0
+    },
+    {
+        "model_completion": "# type: ignore\n    return exact_match_score(\n        references=[reference],\n",
+        "expected_completion": "    return evaluate.load(\"exact_match\").compute(\n        references=[reference],",
+        "score": 3,
+        "bleu_score": 1.384292958842266e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.6125,
+        "chrf_score": 58.79210037828611
+    },
+    {
+        "model_completion": "\n            result += line + end_of_line_token\n    return result\n\n\n",
+        "expected_completion": "            result += line[indent:] + end_of_line_token\n    return result",
+        "score": 4,
+        "bleu_score": 0.488923022434901,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.821917808219178,
+        "chrf_score": 79.06794557581227
+    },
+    {
+        "model_completion": "# noqa: E501\n\n\ndef get_indent_level(s: str) -> int:\n    match = re.match(r' *', s)  # type: ignore\n    if match:\n",
+        "expected_completion": "def discard_functions_with_long_bodies(max_len: int, df: pd.DataFrame) -> pd.DataFrame:\n    return df[df[\"body\"].str.len() <= max_len]",
+        "score": 0,
+        "bleu_score": 1.0518351895246305e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.18656716417910446,
+        "chrf_score": 13.485401056612353
+    },
+    {
+        "model_completion": "\n        indentation_token: str = \"<INDENT>\",\n        indentation_level: int = 0,\n",
+        "expected_completion": "        indent_token: str = \"<INDENT>\",\n        dedent_token: str = \"<DEDENT>\",",
+        "score": 2,
+        "bleu_score": 4.797597231912944e-78,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.6341463414634146,
+        "chrf_score": 48.65722215140308
+    },
+    {
+        "model_completion": " # dedent\n            res_string += line\n        else:\n            if line",
+        "expected_completion": "            res_string += \" \" * indent_cnt + line\n        else:",
+        "score": 2,
+        "bleu_score": 8.093025251555984e-155,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.4864864864864865,
+        "chrf_score": 55.49925345543105
+    },
+    {
+        "model_completion": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ",
+        "expected_completion": "):\n    body_signature_pairs = get_signature_body_pairs_from_kotlin_files(",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.012931034482758674,
+        "chrf_score": 0.0
+    },
+    {
+        "model_completion": "body_signature_pairs\n    )\n    if save",
+        "expected_completion": "        not_parsed_filenames,\n    )",
+        "score": 0,
+        "bleu_score": 1.2882297539194154e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.1842105263157895,
+        "chrf_score": 16.142865611962154
+    },
+    {
+        "model_completion": "\n        output_filename: str\n   <EOT></s>",
+        "expected_completion": "        save_name: str,\n        /,  ",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.5,
+        "chrf_score": 37.47231878376457
+    },
+    {
+        "model_completion": "# json with functions\n            json_with_functions_filename_test: str,  # json with",
+        "expected_completion": "    ):\n        self.json_with_functions_filename = json_with_functions_filename",
+        "score": 1,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.43023255813953487,
+        "chrf_score": 58.84715408563288
+    },
+    {
+        "model_completion": "\n        with open(self.json_with_functions_filename) as f:\n            return json.load(",
+        "expected_completion": "        df = read_dataframe_from_json(\n            self.json_with_functions_filename,",
+        "score": 1,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.2247191011235955,
+        "chrf_score": 60.081809514166615
+    },
+    {
+        "model_completion": "# type: Corpus\n\n    def build_corpus(self) -> Corpus:\n        return",
+        "expected_completion": "    def build_corpus(self):\n        df = read_dataframe_from_json(",
+        "score": 1,
+        "bleu_score": 1.0832677820940877e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.27941176470588236,
+        "chrf_score": 43.23730486931597
+    },
+    {
+        "model_completion": "\nfrom src.dataset.FinetuningDataset import FineTuningDataset\nfrom src.dataset.FinetuningDataset import FineTuningDataset\nfrom src.dataset.FinetuningDataset import FineT",
+        "expected_completion": "from src.dataset.KotlinCodeCompletionDataset import KotlinCodeCompletionDataset\nfrom src.model.utils import SpecialTokens, tokenize_dataset_for_peft, FineTuningDataCollator",
+        "score": 0,
+        "bleu_score": 1.384292958842266e-231,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.41279069767441856,
+        "chrf_score": 41.3306656624594
+    },
+    {
+        "model_completion": "\n        output_dir=output_dir,\n        num_train_epochs=1,\n        per_device_train_",
+        "expected_completion": "        output_dir=\"your-name/bigscience/mt0-large-lora\",\n        learning_rate=lr,",
+        "score": 1,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.388235294117647,
+        "chrf_score": 22.74857989590297
+    },
+    {
+        "model_completion": "\nfrom src.model.utils import get_tokenizer, get_model",
+        "expected_completion": "def main(\n        model_load_file_name: str,",
+        "score": 0,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.16981132075471694,
+        "chrf_score": 17.44636507705564
+    },
+    {
+        "model_completion": "\n        tokenizer=tokenizer,\n        max_seq_length=max_seq_length,\n        max_seq_length",
+        "expected_completion": "        max_len=max_len,\n        eol_token=SpecialTokens.EOL_TOKEN,",
+        "score": 2,
+        "bleu_score": 0.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.29670329670329665,
+        "chrf_score": 25.436726105107883
+    },
+    {
+        "model_completion": "\n        self.corpus = code_data\n    def __len__(self):",
+        "expected_completion": "        self.corpus = code_data\n    def __len__(self):",
+        "score": 5,
+        "bleu_score": 1.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.9818181818181818,
+        "chrf_score": 100.0
+    },
+    {
+        "model_completion": "return len(self.corpus)\n    def __getitem__(self, item):\n       ",
+        "expected_completion": "        return len(self.corpus)\n    def __getitem__(self, item):",
+        "score": 5,
+        "bleu_score": 1.0,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.75,
+        "chrf_score": 100.0
+    },
+    {
+        "model_completion": "\n        return {\n   <EOT></s>",
+        "expected_completion": "        print(code['labels'].shape)\n        return {",
+        "score": 0,
+        "bleu_score": 1.133422688662942e-154,
+        "exact_match_score": 0.0,
+        "edit_similarity_score": 0.25,
+        "chrf_score": 16.36758882657535
+    }
+]
